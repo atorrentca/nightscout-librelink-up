@@ -14,7 +14,7 @@ jobs:
           if [ -z "${{ secrets.LINK_UP_USERNAME }}" ]; then echo "LINK_UP_USERNAME is EMPTY"; else echo "LINK_UP_USERNAME is SET"; fi
           if [ -z "${{ secrets.LINK_UP_PASSWORD }}" ]; then echo "LINK_UP_PASSWORD is EMPTY"; else echo "LINK_UP_PASSWORD is SET"; fi
       - name: Run LibreLinkUp bridge
-        uses: timoschlueter/nightscout-librelink-up@master
+        uses: atorrentca/nightscout-librelink-up@main
         env:
           LINK_UP_USERNAME: ${{ secrets.LINK_UP_USERNAME }}
           LINK_UP_PASSWORD: ${{ secrets.LINK_UP_PASSWORD }}
