@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: "*/5 * * * *"
 
+concurrency:
+  group: librelinkup-nightscout
+  cancel-in-progress: true
+
 jobs:
   librelinkup:
     runs-on: ubuntu-latest
