@@ -9,6 +9,10 @@ jobs:
   librelinkup:
     runs-on: ubuntu-latest
     steps:
+      - name: Check secrets present
+        run: |
+          if [ -z "${{ secrets.LINK_UP_USERNAME }}" ]; then echo "LINK_UP_USERNAME is EMPTY"; else echo "LINK_UP_USERNAME is SET"; fi
+          if [ -z "${{ secrets.LINK_UP_PASSWORD }}" ]; then echo "LINK_UP_PASSWORD is EMPTY"; else echo "LINK_UP_PASSWORD is SET"; fi
       - name: Run LibreLinkUp bridge
         uses: timoschlueter/nightscout-librelink-up@master
         env:
